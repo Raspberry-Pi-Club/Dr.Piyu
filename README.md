@@ -1,4 +1,4 @@
-# Dr.Reddy
+# Dr.Piyu
 A Speech Engine written in Python
 
 * config.py - contains configurations
