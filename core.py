@@ -4,12 +4,9 @@
 # @Date:   2015-04-26 21:03:32
 # @Last Modified by:   JacobSamro
 # @Last Modified time: 2015-04-27 00:01:11
-import pyttsx
+import pyttsx,pygame,time
 from definitions import *
-from config import *
 import speech_recognition as sr
-import pygame
-import time
 
 
 r = sr.Recognizer()
@@ -43,13 +40,17 @@ def action(source):
     audio = r.listen(source)
     try:
     	r.recognize(audio)
-    	print(r.recognize(audio))
+    	txtData = r.recognize(audio)
+    	print(txtData)
+    	#mapText(txtData);   
+    except (KeyboardInterrupt, SystemExit):
+        raise
     except LookupError:
     	speak(VOICE.repeat)
     	sleepTime = getSleepTime(VOICE.repeat)
     	print("Sleeping....")
     	print(sleepTime)
-    	time.sleep(sleepTime)
+    	#time.sleep(sleepTime)
     	print("Wokeup...")
     
 
