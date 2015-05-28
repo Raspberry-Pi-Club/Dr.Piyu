@@ -1,7 +1,7 @@
 # Dr.Piyu
 A Speech Engine written in Python
 
-* config.py - contains configurations
+
 * definitions.py - contains voice definitions
 * core.py - contains core functions
 * main.py - main testing file
@@ -9,7 +9,9 @@ A Speech Engine written in Python
 
 
 ##Dependencies
-* Pygame
+* pyaudio
 * pyttsx
 * Speech Recognition
 * espeak (on linux) and Speech SDK ( on Windows )
+
+Here it how to install and test this source code on windows http://www.jsam.in/blog/raspberry-pi-how-to-use-dr-piyu-on-windows/
