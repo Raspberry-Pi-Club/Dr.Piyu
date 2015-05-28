@@ -4,32 +4,22 @@
 # @Date:   2015-04-26 23:09:28
 # @Last Modified by:   JacobSamro
 # @Last Modified time: 2015-04-26 23:09:31
-import pyaudio,os
-import speech_recognition as sr
+from definitions import *
 
+def mapText(data):
+    txts = TXT();
+    txts =  [txts for txts in dir(txts) 
+              if not txts.startswith('__')]
 
-def excel():
-        os.system("start excel.exe")
+    var1 = TXT();
+    obj_found = False
+    for txt in txts:
+        #print(var1.__getitem__(txt))
+        if(data in var1.__getitem__(txt)):
+            obj_found = True
+            print(txt)
 
-def internet():
-        os.system("start chrome.exe")
+    if(obj_found == False):
+        print('repeat')
 
-def media():
-        os.system("start wmplayer.exe")
-
-def mainfunction(source):
-    audio = r.listen(source)
-    user = r.recognize(audio)
-    print(user)
-    if user == "Excel":
-        excel()
-    elif user == "Internet":
-        internet()
-    elif user == "music":
-        media()
-
-if __name__ == "__main__":
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        while 1:
-            mainfunction(source)
+mapText('what is your name')
