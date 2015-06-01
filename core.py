@@ -103,3 +103,25 @@ def mapTextTamil(data):
 
     if(obj_found == False):
         return 'repeat'
+
+
+class pre:
+    def time():
+        speak(getattr(TAMIL,'time'),'ta')
+        speak(getattr(TAMIL,'_'+ time.strftime("%H")),'ta')
+        speak(getattr(TAMIL,'hour'),'ta')
+        speak(getattr(TAMIL,'_'+ time.strftime("%M")),'ta')
+        speak(getattr(TAMIL,'minute'),'ta')
+
+    def date():
+        speak(getattr(TAMIL,'today'),'ta')
+        speak(getattr(TAMIL,'twothousand'),'ta')
+        speak(getattr(TAMIL,'_'+ time.strftime("%Y").strip('20')),'ta')
+        speak(getattr(TAMIL,'aam'),'ta')
+        speak(getattr(TAMIL,'year'),'ta')
+        speak(getattr(TAMIL,time.strftime("%B").lower()),'ta')
+        speak(getattr(TAMIL,'month'),'ta')
+        speak(getattr(TAMIL,'_'+str(int(time.strftime("%d")))),'ta')
+        speak(getattr(TAMIL,'aam'),'ta')
+        speak(getattr(TAMIL,'day'),'ta')
+

@@ -3,8 +3,8 @@ import speech_recognition as sr
 from core import *
 from definitions import *
 
-#say("Hello") 			#text to speech
-#speak('name') 		#play recorded audio files by mapping internal database
+say("Maharajan is") 			#text to speech
+#speak(getattr(TAMIL,'name') ,'ta') 		#play recorded audio files by mapping internal database
 
 
 def callback(recognizer, audio):
@@ -14,7 +14,7 @@ def callback(recognizer, audio):
         mappeddata = mapText(txtData)
         if(mappeddata=='repeat'):
         	speak('repeat','en')
-        	print('repeat')
+        	print('repeating')
         else:
         	speak(mappeddata,'en')
         	print(txtData)
@@ -41,9 +41,9 @@ r = sr.Recognizer()
 r.energy_threshold = 4000
 with sr.Microphone() as source:
 	print('Adjusting ambient noise')
-	r.adjust_for_ambient_noise(source, duration = 1)
+	r.adjust_for_ambient_noise(source, duration = 5)
 
 print('Starting Background Service')
-r.listen_in_background(sr.Microphone(), callbackTamil)
+r.listen_in_background(sr.Microphone(), callback)
 
 while True: time.sleep(0.1)     
