@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Author: JacobSamro
-# @Date:   2015-04-26 23:09:28
-# @Last Modified by:   JacobSamro
-# @Last Modified time: 2015-04-26 23:09:31
 from definitions import *
 
 def mapText(data):
