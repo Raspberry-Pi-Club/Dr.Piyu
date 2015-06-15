@@ -7,6 +7,14 @@ import speech_recognition as sr
 
 r = sr.Recognizer()
 
+def log(d):
+	t = '[' + time.strftime("%Y-%m-%d %H:%M:%S") + '] :: '
+	fileLocation = "C:\wamp\www\Piyu-UI\interface.txt"
+	_file = open(fileLocation,"a")
+	_file.write(t + d+"\n")
+	_file.close()
+	print(t + d)
+
 def say(word):
 	engine = pyttsx.init()
 	engine.setProperty('rate', RATE)
@@ -25,8 +33,10 @@ def speak(a_name,lang):
 		wf = wave.open(audioFileName, 'rb')
 	except FileNotFoundError:
 		wf = wave.open('voices\\beep'+ WAV, 'rb')
-	p = pyaudio.PyAudio()	
-	print('PIYU CORE v.1.0 - [' + time.strftime("%Y-%m-%d %H:%M:%S") + '] :: ' + '[[Audio]]==>' + a_name + WAV + '\t\t' + '' )
+	p = pyaudio.PyAudio()
+	log = '' + '[[Audio]]==>' + a_name + WAV + '\t\t' + ''
+	print('PIYU CORE v.1.0 - '+ log)
+	log(log)
 	stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
 	                channels=wf.getnchannels(),
 	                rate=wf.getframerate(),
