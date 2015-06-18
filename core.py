@@ -34,9 +34,9 @@ def speak(a_name,lang):
 	except FileNotFoundError:
 		wf = wave.open('voices\\beep'+ WAV, 'rb')
 	p = pyaudio.PyAudio()
-	log = '' + '[[Audio]]==>' + a_name + WAV + '\t\t' + ''
-	print('PIYU CORE v.1.0 - '+ log)
-	log(log)
+	_log = '' + '[[Audio]]==>' + a_name + WAV + '\t\t' + ''
+	print('PIYU CORE v.1.0 - '+ _log)
+	log(_log)
 	stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
 	                channels=wf.getnchannels(),
 	                rate=wf.getframerate(),
